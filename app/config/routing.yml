@@ -1,0 +1,22 @@
+objectif_index:
+    path:      /objectif                                                                               
+    defaults:  { _controller: AppBundle:Objectif:index }
+    
+objectif_liste:
+    path:      /objectif/liste                                                           
+    defaults:  { _controller: AppBundle:Objectif:liste }
+
+objectif_fiche:
+    path:      /objectif/fiche/{id}                                                                              
+    defaults:  { _controller: AppBundle:Objectif:fiche, id:1 }
+    requirements:
+        id: '\d+'
+objectif_form:
+    path:      /objectif/formObjectif                                                                            
+    defaults:  { _controller: AppBundle:Objectif:formObjectif}
+
+objectif_submit_success:
+    path:      /objectif/formObjectif                                                                            
+    defaults:  { _controller: AppBundle:Objectif:formObjectif}
+fos_user:
+    resource: "@FOSUserBundle/Resources/config/routing/all.xml"
