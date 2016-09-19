@@ -1,0 +1,12 @@
+{# app/Resources/views/blog/index.html.twig #}
+{% extends 'base.html.twig' %}
+
+{% block title %}Mon Objectif Super Cool{% endblock %}
+
+{% block body %}
+test Objectis
+    {% for objectif in objectifs %}
+        <h2>{{ objectif.titre }}</h2>
+        <p>{{ objectif.libelle }}</p>
+    {% endfor %}
+{% endblock %}
