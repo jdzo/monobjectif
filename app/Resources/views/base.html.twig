@@ -4,6 +4,12 @@
         <meta charset="UTF-8" />
         <title>{% block title %}Welcome!{% endblock %}</title>
         {% block stylesheets %}{% endblock %}
+        
+{% stylesheets 'bundles/AppBundle/css/style.css' %}
+
+  <link rel="stylesheet" href="{{ asset_url }}" type="text/css" />
+
+{% endstylesheets %}
         <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
     </head>
     <body>

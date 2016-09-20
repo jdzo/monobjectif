@@ -4,9 +4,11 @@
 {% block title %}Mon Objectif Super Cool{% endblock %}
 
 {% block body %}
-test Objectis
+Tous les Objectifs des membres
     {% for objectif in objectifs %}
         <h2>{{ objectif.titre }}</h2>
-        <p>{{ objectif.libelle }}</p>
+        <p>Objectif :{{ objectif.libelle }}</p>
+        <p>Description :{{ objectif.description }}</p>
+             
     {% endfor %}
 {% endblock %}
