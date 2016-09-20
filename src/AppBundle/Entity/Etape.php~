@@ -1,0 +1,40 @@
+<?php
+namespace AppBundle\Entity;
+use Doctrine\ORM\Mapping as ORM;
+use Doctrine\ORM\EntityRepository;
+use AppBundle\Entity\Objectif;
+
+/**
+* @ORM\Entity(repositoryClass="AppBundle\Repository\EtapeRepository")
+* @ORM\Table(name="etape")
+*/
+class Etape{
+    /**
+    * @ORM\Column(type="integer")
+    * @ORM\Id
+    * @ORM\GeneratedValue(strategy="AUTO")
+    */
+    protected $id;
+    /**
+    * @ORM\Column(type="string",length=100)
+    */
+    protected $libelle_etape;
+    /**
+    * @ORM\Column(type="string",length=255)
+    */
+    protected $description_etape;
+    /**
+    * @ORM\Column(type="date")
+    */
+    protected $date_debut_etape;
+    /**
+    * @ORM\Column(type="date")
+    */
+    protected $date_fin_etape;
+    /**
+    * @ORM\OneToOne(targetEntity="Objectif")
+    * @ORM\JoinColumn(name="objectif_id", referencedColumnName="id")
+    */
+    protected $objectif;
+}
+?>

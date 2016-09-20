@@ -10,14 +10,14 @@ interface objectifInterface{
 * @ORM\Table(name="objectif")
 */
 
-class Objectif   extends EntityRepository
+class Objectif   extends EntityRepository   
 {
     /**
     * @ORM\Column(type="integer")
     * @ORM\Id
     * @ORM\GeneratedValue(strategy="AUTO")
     */
-    protected $id;
+    public $id;
     /**
     * @ORM\Column(type="string",length=100)
     */
@@ -29,14 +29,10 @@ class Objectif   extends EntityRepository
     /**
     * @ORM\Column(type="string",length=500)
     */
-    protected $description;
+    public $description;
 
     public function __construct($objectifid=null){
-          $repository = $this->getDoctrine() 
-           ->getManager()
-           ->getRepository('AppBundle:Objectif') ;
-        $listAdverts = $repository->myFindAll();
- 
+    
     }
     public function saveObjectif()
     {

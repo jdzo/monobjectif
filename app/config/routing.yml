@@ -19,4 +19,4 @@ objectif_submit_success:
     path:      /objectif/formObjectif                                                                            
     defaults:  { _controller: AppBundle:Objectif:formObjectif}
 fos_user:
-    resource: "@FOSUserBundle/Resources/config/routing/all.xml"
+    resource: "@FOSUserBundle/Resources/config/routing/all.xml"     

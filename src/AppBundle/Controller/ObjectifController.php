@@ -21,11 +21,11 @@ class ObjectifController extends Controller
     */
     public function indexAction(Request $request)
     {
-        return $this->render('objectif/index.html.twig'        );
+        return $this->render('objectif/index.html.twig');
     }
 
     public function ficheAction($id){
-         $repository = $this
+        $repository = $this
         ->getDoctrine()
         ->getManager()
         ->getRepository('AppBundle:Objectif');      
@@ -35,17 +35,16 @@ class ObjectifController extends Controller
                 'No product found for id '.$id
             );
         }
-                 print_r($objectif);
+        print_r($objectif);
         return $this->render('objectif/objectif.html.twig',array('objectif' => $objectif) );
     } 
     public function listeAction(){
-        $objectifs=array(
-            array("titre"=>"Objectif 1","libelle"=>"Libelle 1"),
-            array("titre"=>"Objectif 2","libelle"=>"Libelle 2"),
-        );
-        return $this->render('objectif/objectifs.html.twig', array('objectifs' => $objectifs
-            ) 
-        );
+        $repository = $this
+        ->getDoctrine()
+        ->getManager()
+        ->getRepository('AppBundle:Objectif');      
+        $objectifs = $repository->myFindAll();
+        return $this->render('objectif/objectifs.html.twig', array('objectifs' => $objectifs));
     }
 
     public function addObjecticfAction(Request $request){
@@ -58,9 +57,7 @@ class ObjectifController extends Controller
         ->getManager()
         ->getRepository('AppBundle:Objectif');      
         $listAdverts = $repository->myFindAll();
-        print_r($listAdverts)        ;
-          
-
+       
         $form = $this->createFormBuilder($objectif)
         ->add('titre', TextType::class)
         ->add('libelle', TextType::class)
@@ -74,12 +71,12 @@ class ObjectifController extends Controller
             // $form->getData() holds the submitted values
             // but, the original `$task` variable has also been updated
             $objectif = $form->getData();
-               //print_r($objectif) ; die();
+            //print_r($objectif) ; die();
             // ... perform some action, such as saving the task to the database
             // for example, if Task is a Doctrine entity, save it!
-             $em = $this->getDoctrine()->getManager();
+            $em = $this->getDoctrine()->getManager();
             $em->persist($objectif);
-             $em->flush();
+            $em->flush();
 
             return $this->redirectToRoute('objectif_submit_success');
         }
