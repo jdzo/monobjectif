@@ -5,7 +5,9 @@
         <title>{% block title %}Welcome!{% endblock %}</title>
         {% block stylesheets %}{% endblock %}
         
-{% stylesheets 'bundles/AppBundle/css/style.css' %}
+{% stylesheets 'bundles/AppBundle/css/style.css'
+     '@bootstrap_css' 
+ %}
 
   <link rel="stylesheet" href="{{ asset_url }}" type="text/css" />
 
