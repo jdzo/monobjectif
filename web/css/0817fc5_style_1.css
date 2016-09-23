@@ -1,0 +1,24 @@
+body, td {
+  font-weight: bold;
+  color:red;
+}
+
+a {
+}
+
+a:hover {
+}
+div{}
+span{}
+ul{}
+li{}
+
+.dropup, .dropdown {
+    position: relative;    
+    float:left;
+    margin:15px;
+}
+
+form label{}
+form submit{}
+form input{}

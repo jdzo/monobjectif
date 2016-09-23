@@ -1,0 +1,35 @@
+<?php
+namespace AppBundle\Entity;
+use Doctrine\ORM\Mapping as ORM;
+use Doctrine\ORM\EntityRepository;
+/**
+* @ORM\Entity(repositoryClass="AppBundle\Repository\InscriptionRepository")
+* @ORM\Table(name="inscription")
+*/
+  class Inscription{  
+      /**
+     * @ORM\Id
+     * @ORM\Column(type="integer")
+     * @ORM\GeneratedValue(strategy="AUTO")
+     */
+    protected $id;
+     /**
+    * @ORM\OneToOne(targetEntity="Programme")
+    * @ORM\JoinColumn(name="programme_id", referencedColumnName="id")
+    */
+    protected $programme;
+    /**
+    * @ORM\OneToOne(targetEntity="User")
+    * @ORM\JoinColumn(name="user_id", referencedColumnName="id")
+    */
+    protected $user;
+     /**
+    * @ORM\Column(type="string",length=100)
+    */
+    protected $annee_universitaire;
+     /**
+    * @ORM\Column(type="string",length=100)
+    */
+    protected $statut;
+  }
+?>

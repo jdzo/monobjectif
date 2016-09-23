@@ -1,0 +1,63 @@
+<?php
+namespace AppBundle\Entity;
+use Doctrine\ORM\Mapping as ORM;
+use Doctrine\ORM\EntityRepository;
+
+interface ProgrammeInterface{
+    public function is_open();   
+}
+  /**
+* @ORM\Entity(repositoryClass="AppBundle\Repository\ProgrammeRepository")
+* @ORM\Table(name="programmes")
+*/
+class Programme{
+    /**
+    * @ORM\Id
+    * @ORM\Column(type="integer")
+    * @ORM\GeneratedValue(strategy="AUTO")
+    */
+    protected $id;
+    /**
+    * @ORM\Column(type="string",length=100)
+    */
+    protected $code;
+    /**
+    * @ORM\Column(type="string",length=100)
+    */
+    protected $libelle;
+    /**
+    * @ORM\Column(type="string",length=100)
+    */
+    protected $description;
+    /**
+    * @ORM\Column(type="string",length=100)
+    */
+    protected $prix;
+    /**
+    * @ORM\Column(type="string",length=100)
+    */
+    protected $prerequis;
+    /**
+    * @ORM\Column(type="string",length=100)
+    */
+    protected $centre;
+    /**
+    * @ORM\Column(type="string",length=100)
+    */
+    protected $date_debut;
+    /**
+    * @ORM\Column(type="string",length=100)
+    */
+    protected $date_fin;
+    /**
+    * @ORM\Column(type="string",length=100)
+    */
+    protected $nb_place;
+    /**
+    * @ORM\Column(type="string",length=100)
+    */
+    protected $is_active;
+
+
+}
+?>

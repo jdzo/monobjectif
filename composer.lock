@@ -4,9 +4,54 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "45fb7e86e1be4489b166c9cb9c682fd3",
-    "content-hash": "ce85d4143d1a9e3e30f39ad8912589e2",
+    "hash": "21bd186381d13a3d22025519cce9d9bc",
+    "content-hash": "a6969350386b0df76777c1be5c12c88d",
     "packages": [
+        {
+            "name": "bmatzner/jquery-bundle",
+            "version": "2.2.2",
+            "target-dir": "Bmatzner/JQueryBundle",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/bmatzner/BmatznerJQueryBundle.git",
+                "reference": "d3287924e1753b3af24640fe9223070cceb575e0"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/bmatzner/BmatznerJQueryBundle/zipball/d3287924e1753b3af24640fe9223070cceb575e0",
+                "reference": "d3287924e1753b3af24640fe9223070cceb575e0",
+                "shasum": ""
+            },
+            "require": {
+                "symfony/framework-bundle": ">=2.1"
+            },
+            "type": "symfony-bundle",
+            "autoload": {
+                "psr-0": {
+                    "Bmatzner\\JQueryBundle": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT",
+                "GPLv2"
+            ],
+            "authors": [
+                {
+                    "name": "Bernd Matzner",
+                    "email": "bernd@matznermatzner.de",
+                    "homepage": "http://berndmatzner.de"
+                }
+            ],
+            "description": "jQuery Bundle for Symfony2",
+            "homepage": "http://jquery.com/",
+            "keywords": [
+                "javascript",
+                "jquery",
+                "symfony"
+            ],
+            "time": "2016-03-26 19:51:09"
+        },
         {
             "name": "doctrine/annotations",
             "version": "v1.2.7",

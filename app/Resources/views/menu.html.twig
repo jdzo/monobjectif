@@ -1,15 +1,55 @@
-<div>
-    <ul>
-        <li><a href="{{ path('objectif_index') }}">Index Objectif</a></li>
-        <li><a href="{{ path('objectif_liste') }}">liste des Objectifs </a></li>
-        <li><a href="{{ path('objectif_fiche') }}">Objectif 5 </a></li>            
-   <li><a href="{{ path('objectif_form') }}">Creer Nouveau </a></li>            
+<nav class="navbar navbar-default">
+    <div class="container-fluid">
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+           
 
-    </ul>
-</div>
+            <div class="dropdown">
+                <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                    Objectifs
+                    <span class="caret"></span>
+                </button>
+                <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+                   <li><a href="{{ path('objectif_index') }}">Index Objectif</a></li>
+                    <li><a href="{{ path('objectif_liste') }}">liste des Objectifs </a></li>
+                    <li><a href="{{ path('objectif_fiche') }}">Objectif 5 </a></li>            
+                    <li><a href="{{ path('objectif_form') }}">Creer Nouveau </a></li>  
+                </ul>
+            </div>
+            
+            <div class="dropdown">
+                <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                    Utilisateurs
+                    <span class="caret"></span>
+                </button>
+                <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+                    <li><a href="{{ path('fos_user_security_login') }}">Sign In </a></li>          
+                    <li><a href="{{ path('fos_user_security_logout') }}">Log out </a></li>        
+                    <li><a href="{{ path('fos_user_registration_register') }}">S'incrire sur le site</a></li>  
+                </ul>
+            </div>
 
-<div>
-     <li><a href="{{ path('fos_user_security_login') }}">Sign In </a></li>          
-     <li><a href="{{ path('fos_user_security_logout') }}">Log out </a></li>        
-     <li><a href="{{ path('fos_user_registration_register') }}">S'incrire</a></li>        
-</div>
+            <div class="dropdown">
+                <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                    S'inscrire
+                    <span class="caret"></span>
+                </button>
+                <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+                    <li><a href="{{ path('fos_user_security_login') }}">S'Inscrire à l'ecole </a></li>          
+                    <li><a href="{{ path('fos_user_security_logout') }}">Modifier mon inscription</a></li>        
+                    <li><a href="{{ path('fos_user_registration_register') }}">Verifier les inscriptions</a></li>  
+                </ul>
+            </div>
+            
+            <div class="dropdown">
+                <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                   Voir nos programmes 
+                    <span class="caret"></span>
+                </button>
+                <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+                    <li><a href="{{ path('programme_index') }}">Tous nos programmes </a></li>            
+                </ul>
+            </div>
+
+        </div>
+    </div>
+</nav>

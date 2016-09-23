@@ -1,0 +1,57 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Programme list</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Code</th>
+                <th>Libelle</th>
+                <th>Description</th>
+                <th>Prix</th>
+                <th>Prerequis</th>
+                <th>Centre</th>
+                <th>Date_debut</th>
+                <th>Date_fin</th>
+                <th>Nb_place</th>
+                <th>Is_active</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for programme in programmes %}
+            <tr>
+                <td><a href="{{ path('programme_show', { 'id': programme.id }) }}">{{ programme.id }}</a></td>
+                <td>{{ programme.code }}</td>
+                <td>{{ programme.libelle }}</td>
+                <td>{{ programme.description }}</td>
+                <td>{{ programme.prix }}</td>
+                <td>{{ programme.prerequis }}</td>
+                <td>{{ programme.centre }}</td>
+                <td>{{ programme.datedebut }}</td>
+                <td>{{ programme.datefin }}</td>
+                <td>{{ programme.nbplace }}</td>
+                <td>{{ programme.isactive }}</td>
+                <td>
+                    <ul>
+                        <li>
+                            <a href="{{ path('programme_show', { 'id': programme.id }) }}">show</a>
+                        </li>
+                        <li>
+                            <a href="{{ path('programme_edit', { 'id': programme.id }) }}">edit</a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('programme_new') }}">Create a new entry</a>
+        </li>
+    </ul>
+{% endblock %}

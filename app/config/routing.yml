@@ -1,3 +1,11 @@
+app_programme:
+    resource: "@AppBundle/Controller/ProgrammeController.php"
+    type:     annotation
+
+app_inscription:
+    resource: "@AppBundle/Controller/InscriptionController.php"
+    type:     annotation
+
 objectif_index:
     path:      /objectif                                                                               
     defaults:  { _controller: AppBundle:Objectif:index }

@@ -4,19 +4,41 @@
         <meta charset="UTF-8" />
         <title>{% block title %}Welcome!{% endblock %}</title>
         {% block stylesheets %}{% endblock %}
-        
-{% stylesheets 'bundles/AppBundle/css/style.css'
-     '@bootstrap_css' 
- %}
 
-  <link rel="stylesheet" href="{{ asset_url }}" type="text/css" />
+        {% stylesheets 'bundles/AppBundle/css/style.css'
+        '@bootstrap_css' 
+        %}
 
-{% endstylesheets %}
+        <link rel="stylesheet" href="{{ asset_url }}" type="text/css" />
+
+        {% endstylesheets %}
+
         <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
     </head>
     <body>
-      {{ include('menu.html.twig') }}
-        {% block body %} {% endblock %}
-        {% block javascripts %}{% endblock %}
+        {{ include('menu.html.twig') }}  
+        {% block body %}
+             <div>
+             </div>
+        {% endblock %}
+            {% block left %}
+            <div>
+                 
+            </div>
+            {% endblock %} 
+           
+
+            {% block Bottom %}
+            <div>
+                  
+            </div>
+            {% endblock %}
+            
+        
+        {% javascripts '@jquery_js' 
+        '@bootstrap_js' 
+         %}
+        <script src="{{ asset_url }}"></script>
+        {% endjavascripts %}
     </body>
 </html>

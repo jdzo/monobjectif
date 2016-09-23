@@ -80,7 +80,7 @@ assetic:
         bootstrap_css:
             inputs: %kernel.root_dir%/../vendor/twbs/bootstrap/dist/css/bootstrap.css
             filters: 
-                cssrewrite: ~
+                - cssrewrite
             output: css/bootstrap.css
         bootstrap_js:
             inputs:
@@ -97,3 +97,7 @@ assetic:
                 - %kernel.root_dir%/../vendor/twbs/bootstrap/js/tab.js
                 - %kernel.root_dir%/../vendor/twbs/bootstrap/js/transition.js
             output: js/bootstrap.js
+        jquery_js:
+            inputs:
+                - %kernel.root_dir%/../vendor/bmatzner/jquery-bundle/Bmatzner/JQueryBundle/Resources/public/js/jquery.min.js
+            output: js/jquery.js
